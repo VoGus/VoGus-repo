@@ -1,19 +1,43 @@
-package Hospital;
+package com.hospital;
 
-import java.util.Scanner;
+public class Doctor extends Person {
+    private
+    String sPost, sDegree;
+    int nSalary;
 
-/**
- * Created by VoGus on 28.09.2014.
- */
-public class Doctor extends Staff {
-    public static void main(String[] args) {
-    Scanner sc = new Scanner(System.in);
-    int i = 90, j = 30000, z=0, x=0, y=0;
-    System.out.print(i + " врачей нуждаются в курсах повышения квалификации.\nСколько денег Вы готовы выделить на их обучение?\n");
-    z = sc.nextInt();
-    x=z/j;
-        System.out.println(x + " врачей прошло курсы.");
-    y=i-x;
-            System.out.println(y + " врачей всё ещё нуждаются в курсах.");
+public
+    Doctor( String Name, String Surname, String Patronymic, int Age, String Post, String Degree, int Salary ) {
+        super( Name, Surname,Patronymic, Age);
+        sPost = Post;
+        sDegree = Degree;
+        nSalary = Salary;
+    }
+    void SetPost( String Post ){
+        sPost = Post;
+    }
+
+    void SetDegree( String Degree ){
+        sDegree = Degree;
+    }
+
+    void SetSalary( int Salary ){
+        nSalary = Salary;
+    }
+
+    String GetPost(){
+        return sPost;
+    }
+
+    String GetDegree(){
+        return sDegree;
+    }
+
+    int GetSalary(){
+        return nSalary;
+    }
+
+    public void Show(){
+        super.Show();
+        System.out.print( sPost + " " +sDegree + " " +nSalary );
     }
 }
